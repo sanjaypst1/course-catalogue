@@ -1,0 +1,11 @@
+# Keep this public repo web-only
+*.pdf
+*.pptx
+*.docx
+*.xlsx
+*.csv
+docs/
+private/
+private-materials/
+*.bak
+.DS_Store

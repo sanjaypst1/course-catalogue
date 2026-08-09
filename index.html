@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Learning & Capability Catalogue · Sanjay Singh Rawat</title>
+  <meta name="description" content="Enterprise learning catalogue for Scrum, Kanban, Product, Leadership and SAFe workshops by Sanjay Singh Rawat. Explore courses, role pathways, and capability frameworks." />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="canonical" href="https://sanjaypst1.github.io/course-catalogue/" />
+  <meta property="og:title" content="Learning & Capability Catalogue · Sanjay Singh Rawat" />
+  <meta property="og:description" content="Self-service learning portal for Agile, Product, Kanban and SAFe capability building." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#catalogue">Skip to catalogue</a>
+
+  <header class="topnav">
+    <div class="wrap">
+      <a class="brand" href="#home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Learning Catalogue<small id="ownerName">Sanjay Singh Rawat</small></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#catalogue">Courses</a>
+        <a href="#paths">Paths</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#impact">Impact</a>
+        <a href="#trainer">Trainer</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+        <a class="btn btn-primary" id="mailLink" href="mailto:sanjay.scrum@gmail.com">Enquire</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Enterprise learning portal</p>
+          <h1>Find the right capability-building experience</h1>
+          <p>
+                Find the right workshop or consulting engagement. Search by skill, filter by role, or explore CORNERSTONE-style proficiency programs —
+                without wading through a traditional LMS dump.
+          </p>
+          <div class="search-shell">
+            <div class="search-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+              <input id="globalSearch" type="search" placeholder="Search courses, skills, certifications…" autocomplete="off" aria-label="Search catalogue" />
+              <div class="suggest" id="suggest" role="listbox" aria-label="Search suggestions"></div>
+            </div>
+            <a class="btn btn-primary" href="#catalogue">Browse catalogue</a>
+          </div>
+          <div class="chip-row" style="margin-top:1rem;" id="domainCloud"></div>
+        </div>
+        <aside class="hero-aside" aria-label="Impact snapshot">
+          <div class="stat-card"><strong>2,100+</strong><span>people trained · 4 years</span></div>
+          <div class="stat-card"><strong>19</strong><span>catalogue offerings</span></div>
+          <div class="stat-card"><strong>11</strong><span>role-based learning paths</span></div>
+          <div class="stat-card"><strong>30+</strong><span>countries in learner footprint</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="catalogue">
+      <div class="wrap">
+        <div class="breadcrumbs"><a href="#home">Home</a> / <span>Course catalogue</span></div>
+        <div class="section-head">
+          <div>
+            <h2>Learning &amp; consulting catalogue</h2>
+            <p>Filter workshops, certifications, and capability consulting programs by domain, role, skill, or offering type.</p>
+          </div>
+        </div>
+
+        <div class="filters">
+          <aside class="filter-panel panel" id="filterPanel" aria-label="Filters">
+            <div class="filter-actions" style="margin-bottom:.8rem;">
+              <button class="chip" id="clearFilters" type="button">Clear all</button>
+            </div>
+            <div class="filter-group">
+              <h3>Domain</h3>
+              <div id="domainFilters"></div>
+            </div>
+            <div class="filter-group">
+              <h3>Level</h3>
+              <div id="levelFilters"></div>
+            </div>
+            <div class="filter-group">
+              <h3>Role</h3>
+              <div id="roleFilters"></div>
+            </div>
+            <div class="filter-group">
+              <h3>Skills</h3>
+              <div id="skillFilters"></div>
+            </div>
+            <div class="filter-group">
+              <h3>Offering type</h3>
+              <div id="typeFilters"></div>
+            </div>
+            <div class="filter-group">
+              <h3>Duration</h3>
+              <select id="durationFilter" style="width:100%;padding:.55rem .7rem;border-radius:10px;border:1px solid var(--line);background:var(--bg);">
+                <option value="any">Any duration</option>
+                <option value="short">Up to 1 day</option>
+                <option value="standard">2 days (standard)</option>
+                <option value="extended">Extended</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <h3>Certification</h3>
+              <label><input type="checkbox" id="certOnly" /> Credential-aligned only</label>
+            </div>
+            <div class="filter-group">
+              <h3>Sort</h3>
+              <select id="sortFilter" style="width:100%;padding:.55rem .7rem;border-radius:10px;border:1px solid var(--line);background:var(--bg);">
+                <option value="featured">Featured</option>
+                <option value="az">Title A–Z</option>
+                <option value="level">Level</option>
+                <option value="duration">Duration</option>
+              </select>
+            </div>
+          </aside>
+
+          <div>
+            <div class="results-meta">
+              <strong id="resultCount">0 courses</strong>
+              <div>
+                <span style="font-size:.82rem;color:var(--muted);font-weight:650;margin-right:.35rem;">Recently viewed</span>
+                <div class="chip-row" id="recentList" style="display:inline-flex;"></div>
+              </div>
+            </div>
+            <div class="course-grid" id="courseGrid"></div>
+
+            <div class="section-head" style="margin-top:2rem;">
+              <div>
+                <h2 style="font-size:1.35rem;">Trending &amp; popular</h2>
+                <p>Frequently requested foundation experiences.</p>
+              </div>
+            </div>
+            <div class="course-grid" id="trendingGrid"></div>
+
+            <div class="accordion" style="margin-top:1.5rem;">
+              <details>
+                <summary>How to use this catalogue</summary>
+                <div class="content">
+                  Start with your role under Learning Paths, or filter the catalogue by the skill you need now.
+                  Open any course for objectives, prerequisites, competencies, and follow-on recommendations.
+                  Bookmark favourites and compare offerings side by side.
+                </div>
+              </details>
+              <details>
+                <summary>Delivery &amp; formats</summary>
+                <div class="content">
+                  Most offerings are facilitator-led (virtual or face-to-face). Private cohorts and public batches are available.
+                  Contact for organisational roadmaps and campus formats.
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="paths">
+      <div class="wrap">
+        <div class="breadcrumbs"><a href="#home">Home</a> / <span>Learning paths</span></div>
+        <div class="section-head">
+          <div>
+            <h2>Role-based learning paths</h2>
+            <p>Beginner → Intermediate → Advanced → Expert sequences with estimated hours.</p>
+          </div>
+        </div>
+        <div class="path-grid" id="pathGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="capabilities">
+      <div class="wrap">
+        <div class="breadcrumbs"><a href="#home">Home</a> / <span>Capability framework</span></div>
+        <div class="section-head">
+          <div>
+            <h2>Capability framework</h2>
+            <p>Competency targets, knowledge areas, certification paths, and recommended courses per role.</p>
+          </div>
+        </div>
+        <div class="cap-layout">
+          <aside class="panel role-list" id="roleList" aria-label="Roles"></aside>
+          <div class="panel heatmap" id="heatmap"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="wrap">
+        <div class="breadcrumbs"><a href="#home">Home</a> / <span>Learning impact</span></div>
+        <div class="section-head">
+          <div>
+            <h2>Learning impact dashboard</h2>
+            <p>Highlights from Scrum.org ScoreReport delivery over the last four years.</p>
+          </div>
+        </div>
+        <div class="dash-grid" id="impactStats" style="margin-bottom:1rem;"></div>
+        <div class="dash-grid">
+          <div class="panel">
+            <h3>Trusted by</h3>
+            <div class="pill-cloud" id="clientPills"></div>
+          </div>
+          <div class="panel">
+            <h3>Learner geographies</h3>
+            <div class="pill-cloud" id="geoPills"></div>
+          </div>
+          <div class="panel">
+            <h3>Popular skills in catalogue</h3>
+            <div class="pill-cloud" id="skillPills"></div>
+          </div>
+          <div class="panel">
+            <h3>Domain coverage</h3>
+            <div class="pill-cloud">
+              <span>Agile &amp; Scrum</span><span>Product</span><span>Kanban &amp; Flow</span>
+              <span>Leadership</span><span>SAFe &amp; Scaling</span><span>Capability Consulting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trainer">
+      <div class="wrap">
+        <div class="breadcrumbs"><a href="#home">Home</a> / <span>Trainer</span></div>
+        <div class="section-head">
+          <div>
+            <h2>Meet the trainer</h2>
+            <p>Facilitator-led, activity-first learning — credentials and profiles for due diligence.</p>
+          </div>
+        </div>
+        <div class="dash-grid">
+          <div class="panel" style="grid-column: span 2;">
+            <h3 style="font-family:var(--display);font-size:1.5rem;margin-bottom:.6rem;">Sanjay Singh Rawat</h3>
+            <p style="color:var(--muted);margin-bottom:.9rem;">
+              Professional Scrum Trainer, Accredited Kanban Trainer, and SAFe SPCT with deep experience
+              enabling transformations across banking, consulting, healthcare, and public sector contexts.
+            </p>
+            <div class="pill-cloud" style="margin-bottom:1rem;">
+              <span>Professional Scrum Trainer</span>
+              <span>Accredited Kanban Trainer</span>
+              <span>SAFe SPCT 6.0</span>
+              <span>Leadership Circle Facilitator</span>
+              <span>ICAgile Expert — Enterprise Coaching</span>
+            </div>
+            <div class="chip-row">
+              <a class="btn btn-primary" id="profileTrainer" href="https://sanjaypst1.github.io/sanjay-training-profile/" target="_blank" rel="noopener">Full trainer profile ↗</a>
+              <a class="btn btn-ghost" id="profileKanban" href="https://kanban.university/kuapps/user/6621" target="_blank" rel="noopener">Kanban University</a>
+              <a class="btn btn-ghost" id="profileScrum" href="https://www.scrum.org/sanjay-singh-rawat" target="_blank" rel="noopener">Scrum.org</a>
+              <a class="btn btn-ghost" id="profileLinkedin" href="https://www.linkedin.com/in/sanjaysingh13/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Book a conversation</h3>
+            <p style="color:var(--muted);font-size:.9rem;margin:.5rem 0 1rem;">Private cohorts, public classes, or multi-workshop roadmaps.</p>
+            <a class="btn btn-primary" href="mailto:sanjay.scrum@gmail.com?subject=Learning%20Catalogue%20Enquiry">sanjay.scrum@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="quick-jump" aria-label="Quick jump">
+    <a href="#home" title="Home">H</a>
+    <a href="#catalogue" title="Courses">C</a>
+    <a href="#paths" title="Paths">P</a>
+    <a href="#capabilities" title="Capabilities">K</a>
+    <a href="#impact" title="Impact">I</a>
+  </nav>
+  <button class="to-top" id="toTop" type="button" aria-label="Back to top">↑</button>
+
+  <div class="compare-bar" id="compareBar">
+    <span id="compareCount">0 selected</span>
+    <button type="button" id="compareOpen">Compare</button>
+    <button type="button" id="compareClear">Clear</button>
+  </div>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+  <aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="drawer-inner">
+      <button class="close" id="drawerClose" aria-label="Close details">×</button>
+      <div class="chip-row" id="drawerBadges" style="margin-bottom:.35rem;"></div>
+      <h2 id="drawerTitle"></h2>
+      <div id="drawerBody"></div>
+      <a class="btn btn-primary" id="drawerCta" href="mailto:sanjay.scrum@gmail.com">Enquire about this course</a>
+    </div>
+  </aside>
+
+  <div class="modal" id="compareModal" role="dialog" aria-modal="true" aria-label="Compare courses">
+    <div class="modal-card" id="compareBody"></div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <span>Learning &amp; Capability Catalogue · <span id="year"></span></span>
+      <span>
+        <a href="mailto:sanjay.scrum@gmail.com">Contact</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
